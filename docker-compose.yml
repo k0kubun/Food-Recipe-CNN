@@ -1,0 +1,11 @@
+version: '3.7'
+services:
+  jupyter:
+    image: jupyter/tensorflow-notebook:latest
+    command: start-notebook.sh --no-browser --LabApp.token=
+    environment:
+      JUPYTER_ENABLE_LAB: 'yes'
+    volumes:
+      - .:/home/jovyan/work
+    ports:
+      - 8888:8888
